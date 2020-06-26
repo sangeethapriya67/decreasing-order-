@@ -1,0 +1,19 @@
+def most_frequent(A):
+    n = len(A)
+    my_dic = {}
+    for i in A:
+        freq = 0
+        if i not in my_dic:
+          for j in range(n):
+              if i == A[j]:
+                  freq = freq + 1
+          my_dic[i]=freq
+    sort_values = sorted(my_dic.items(), key=lambda x: x[1], reverse=True)
+    return sort_values
+
+if __name__=="_main_":
+    A=[]
+    A=input()
+    sort_value = most_frequent(A)
+    for i in sort_value:
+        print(i[0]+' =',i[1])
